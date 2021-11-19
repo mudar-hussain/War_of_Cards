@@ -72,7 +72,7 @@ round_num = 0
 game_on = True
 while game_on:
     round_num += 1
-    print(f'Round {round_num}')
+    print(f'\n Round {round_num}')
 
     if len(player_one.all_cards) == 0:
         print("Player One is out of Cards! Player Two Wins")
@@ -86,10 +86,14 @@ while game_on:
 
     # Start new Round
     player_one_cards = []
-    player_one_cards.append(player_one.remove_one())
+    p1 = player_one.remove_one()
+    print(p1)
+    player_one_cards.append(p1)
 
     player_two_cards = []
-    player_two_cards.append(player_two.remove_one())
+    p2 = player_two.remove_one()
+    print(p2)
+    player_two_cards.append(p2)
 
     at_war = True
     while at_war:
@@ -104,11 +108,11 @@ while game_on:
         else:
             print("It's a Tie, War Continues")
             if len(player_one.all_cards) < 5:
-                print("Player One unable to declare a war \n Player Two Wins!")
+                print("\n Player One unable to declare a war \n Player Two Wins!")
                 game_on = False
                 break
             elif len(player_two.all_cards) < 5:
-                print("Player Two unable to declare a war \n Player One Wins!")
+                print("\n Player Two unable to declare a war \n Player One Wins!")
                 game_on = False
                 break
             else:
